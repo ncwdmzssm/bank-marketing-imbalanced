@@ -1,16 +1,12 @@
 
-致队友：
-1. gitignore文件设置了：
-   不上传原始数据
-   不上传冻结后的 .npy
-   冻结后的 .npy自己运行 data_prep.py 生成
-2. 请先 git clone 仓库，Branch → New Branch
+
+1. 请先 git clone 仓库，Branch → New Branch
    不要修改 data/ 目录
    只在 src/ 下开发各自负责的文件
    修改前请先 git pull
    提交请写清楚 commit message
 
-3. 数据接口运用示例：X_train = np.load("X_train.npy")
+2. 数据接口运用示例：X_train = np.load("X_train.npy")
 
 
 # Cost-Sensitive Ensemble Learning for Imbalanced Bank Marketing
