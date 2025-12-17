@@ -180,11 +180,4 @@ cython_debug/
 .cursorignore
 .cursorindexingignore
 
-# Project data 
-data/raw/
-data/processed/
 
-# Experiment outputs
-outputs/
-*.npy
-*.csv
