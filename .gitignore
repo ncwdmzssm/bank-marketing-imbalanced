@@ -180,7 +180,7 @@ cython_debug/
 .cursorignore
 .cursorindexingignore
 
-# Project data (do not upload datasets)
+# Project data 
 data/raw/
 data/processed/
 
