@@ -128,6 +128,15 @@ def main():
     print("Val:  ", np.bincount(y_val))
     print("Test: ", np.bincount(y_test))
 
+def load_data(data_dir=None):
+    X_train = np.load(os.path.join(data_dir, "X_train.npy"))
+    X_val = np.load(os.path.join(data_dir, "X_val.npy"))
+    X_test = np.load(os.path.join(data_dir, "X_test.npy"))
+    y_train = np.load(os.path.join(data_dir, "y_train.npy"))
+    y_test = np.load(os.path.join(data_dir, "y_test.npy"))
+    y_val = np.load(os.path.join(data_dir, "y_val.npy"))
+    
+    return X_train, X_val, X_test, y_train, y_val, y_test
 
 if __name__ == "__main__":
     main()
