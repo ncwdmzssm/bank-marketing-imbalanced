@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 # Allow running as a script: python src/effect/run_multi_seed.py
-if __name__ == "__main__" and __package__ is None:  # pragma: no cover
+if __name__ == "__main__" and (__package__ is None or __package__ == ""):  # pragma: no cover
     import sys
     from pathlib import Path
 
@@ -45,7 +45,7 @@ class MultiSeedConfig:
 
     def __post_init__(self) -> None:
         if self.seeds is None:
-            self.seeds = [0, 1, 2, 3, 4]
+            self.seeds = [0, 1, 2, 3, 4,42]
 
 
 def _ensure_dir(path: str) -> None:
@@ -165,4 +165,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
