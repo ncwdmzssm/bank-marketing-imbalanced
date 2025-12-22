@@ -406,8 +406,8 @@ def main() -> None:
         methods = df_results["method"].tolist()
         x = np.arange(len(methods))
         width = 0.35
-        ax.bar(x - width/2, df_results["recall"], width, label="Recall", alpha=0.8)
-        ax.bar(x + width/2, df_results["f1"], width, label="F1-Score", alpha=0.8)
+        bars_recall = ax.bar(x - width/2, df_results["recall"], width, label="Recall", alpha=0.8)
+        bars_f1 = ax.bar(x + width/2, df_results["f1"], width, label="F1-Score", alpha=0.8)
         ax.set_xlabel("Method")
         ax.set_ylabel("Score")
         ax.set_title("Recall & F1-Score Comparison")
@@ -415,6 +415,18 @@ def main() -> None:
         ax.set_xticklabels(methods, rotation=15, ha="right")
         ax.legend()
         ax.grid(True, alpha=0.3, axis="y")
+        
+        # Add value labels on bars for Recall
+        for bar in bars_recall:
+            height = bar.get_height()
+            ax.text(bar.get_x() + bar.get_width()/2., height,
+                   f"{height:.3f}", ha="center", va="bottom", fontsize=8)
+        
+        # Add value labels on bars for F1
+        for bar in bars_f1:
+            height = bar.get_height()
+            ax.text(bar.get_x() + bar.get_width()/2., height,
+                   f"{height:.3f}", ha="center", va="bottom", fontsize=8)
         
         # Subplot 3: Prediction Time Comparison (ms)
         ax = axes[1, 0]
